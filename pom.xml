@@ -9,7 +9,6 @@
 	<packaging>pom</packaging>
 
 	<name>airlane-microservices-app</name>
-	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -52,4 +51,5 @@
 		<module>airlane-discovery-service</module>
 		<module>airlane-webapp</module>
 	</modules>
+	<description>Application to manage an airlaine using Spring Cloud Netflix</description>
 </project>

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+  context-path: /airlane-web
+
+eureka:
+  instance:
+    hostname: springbootweb
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
+

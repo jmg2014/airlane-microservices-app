@@ -1,0 +1,20 @@
+# Build Artifacts
+
+.gradle/
+build/
+target/
+bin/
+
+# Eclipse Project Files
+
+.classpath
+.project
+.settings/
+.springBeans
+
+# IntelliJ IDEA Files
+
+*.iml
+*.ipr
+*.iws
+*.idea

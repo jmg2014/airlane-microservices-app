@@ -4,7 +4,9 @@ server:
 
 eureka:
   instance:
-    hostname: springbootweb
+    hostname: airlane-web
+    statusPageUrlPath: /airlane-web/info
+    healthCheckUrlPath: /airlane-web/health
   client:
     registerWithEureka: true
     fetchRegistry: true

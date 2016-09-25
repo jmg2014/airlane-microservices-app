@@ -12,9 +12,9 @@
 	<description>Edge service for airlane</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
+		<groupId>com.springcloud.myapp</groupId>
+		<artifactId>airlane-microservices-app</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../</relativePath> <!-- lookup parent from repository -->
 	</parent>
 

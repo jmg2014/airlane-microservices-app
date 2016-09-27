@@ -1,3 +1,7 @@
 spring:
   application:
     name: airlane-web
+    
+server:
+  port: 8080
+  context-path: /airlane-web

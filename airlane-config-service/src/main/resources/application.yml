@@ -1,11 +1,14 @@
-server:
-  port: 8888
-  contextPath: /config-service
-  
+spring:
+  profiles:
+    active: development
+
+---
+spring:
+  profiles: development
 
 eureka:
   instance:
-    hostname: config-service
+    prefer-ip-address: true
     leaseRenewalIntervalInSeconds: 10
     statusPageUrlPath: /config-service/info
     homePageUrlPath: /config-service/
@@ -16,11 +19,27 @@ eureka:
     healthcheck:
       enabled:true
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
+       
+          
+---
 spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: hhttps://github.com/jmg2014/spring-boot-microservice-config.git
+  profiles: docker
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /config-service/info
+    homePageUrlPath: /config-service/
+    healthCheckUrlPath: /config-service/health
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    healthcheck:
+      enabled:true
+    serviceUrl:
+      defaultZone: http://192.168.99.100:8761/eureka/
+
+        

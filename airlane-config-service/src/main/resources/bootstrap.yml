@@ -1,3 +1,13 @@
 spring:
   application:
     name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jmg2014/spring-boot-microservice-config.git  
+    
+server:
+  port: 8888
+  
+  

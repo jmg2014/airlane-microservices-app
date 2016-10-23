@@ -1,28 +1,28 @@
 package com.springcloud.myapp.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 public class EmployeeUI {
 
-  private Integer selectedCustomerId;
-  private Set<Position> customerSet = new HashSet<Position>();
+  private Integer selectedPositionId;
+  private List<Position> positionSet = new ArrayList<Position>();
 
 
-  public Integer getSelectedCustomerId() {
-    return selectedCustomerId;
+  public Integer getSelectedPositionId() {
+    return selectedPositionId;
   }
 
-  public void setSelectedCustomerId(Integer selectedCustomerId) {
-    this.selectedCustomerId = selectedCustomerId;
+  public void setSelectedPositionId(Integer selectedPositionId) {
+    this.selectedPositionId = selectedPositionId;
   }
 
-  public Set<Position> getCustomerSet() {
-    return customerSet;
+  public List<Position> getPositionSet() {
+    return positionSet;
   }
 
-  public void setCustomerSet(Set<Position> customerSet) {
-    this.customerSet = customerSet;
+  public void setPositionSet(List<Position> positionSet) {
+    this.positionSet = positionSet;
   }
 
   private Integer id;

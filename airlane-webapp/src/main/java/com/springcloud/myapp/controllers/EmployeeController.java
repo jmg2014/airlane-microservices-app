@@ -2,6 +2,9 @@ package com.springcloud.myapp.controllers;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
+
 
 import javax.validation.Valid;
 
@@ -50,8 +53,48 @@ public class EmployeeController {
 
   @GetMapping("employee/edit/{id}")
   public String edit(@PathVariable Integer id, Model model) {
-    model.addAttribute("employee", employeeService.getEmployeeById(id));
+
+
+    Employee e = employeeService.getEmployeeById(id);
+    EmployeeUI employee = new EmployeeUI();
+
+    List<Position> positions = new ArrayList<Position>();
+
+    Position currentPosition = e.getPosition();
+    positions.add(currentPosition);
+
+    for (Position position : positionService.listAllPositions()) {
+      if (position.getId() != currentPosition.getId()) {
+        positions.add(position);
+      }
+    }
+
+
+    employee.setPositionSet(positions);
+    employee.setName(e.getName());
+    employee.setLastName(e.getLastName());
+    employee.setId(id);
+
+
+    model.addAttribute("employeeUI", employee);
+
     return "employeeform";
+  }
+
+  @PostMapping(value = "update")
+  public String update(@Valid EmployeeUI employeeUI, BindingResult bindingResult, Model model) {
+
+
+    Employee employee = employeeService.getEmployeeById(employeeUI.getId());
+
+
+    employee.setName(employeeUI.getName());
+    employee.setLastName(employeeUI.getLastName());
+    employee.setPosition(positionService.getPositionById(employeeUI.getSelectedPositionId()));
+
+    employeeService.saveEmployee(employee);
+
+    return "redirect:/employee/" + employee.getId();
   }
 
   @GetMapping("employee/new")
@@ -59,13 +102,13 @@ public class EmployeeController {
 
     EmployeeUI employee = new EmployeeUI();
 
-    Set<Position> positions = new HashSet<Position>();
+    List<Position> positions = new ArrayList<Position>();
 
     for (Position position : positionService.listAllPositions()) {
       positions.add(position);
     }
 
-    employee.setCustomerSet(positions);
+    employee.setPositionSet(positions);
 
     model.addAttribute("employeeUI", employee);
 
@@ -79,7 +122,7 @@ public class EmployeeController {
     Employee newEmployee = new Employee();
     newEmployee.setName(employee.getName());
     newEmployee.setLastName(employee.getLastName());
-    newEmployee.setPosition(positionService.getPositionById(employee.getSelectedCustomerId()));
+    newEmployee.setPosition(positionService.getPositionById(employee.getSelectedPositionId()));
 
     employeeService.saveEmployee(newEmployee);
 

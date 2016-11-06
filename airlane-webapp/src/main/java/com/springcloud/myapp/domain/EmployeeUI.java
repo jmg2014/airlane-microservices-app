@@ -7,7 +7,10 @@ public class EmployeeUI {
 
   private Integer selectedPositionId;
   private List<Position> positionSet = new ArrayList<Position>();
-
+  private Integer id;
+  private Integer version;
+  private String name;
+  private String lastName;
 
   public Integer getSelectedPositionId() {
     return selectedPositionId;
@@ -24,16 +27,6 @@ public class EmployeeUI {
   public void setPositionSet(List<Position> positionSet) {
     this.positionSet = positionSet;
   }
-
-  private Integer id;
-
-
-  private Integer version;
-
-
-  private String name;
-
-  private String lastName;
 
 
   public Integer getId() {

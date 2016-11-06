@@ -4,19 +4,6 @@ spring:
 ---
 spring:
   profiles: development
-  datasource:
-    url: jdbc:mysql://localhost:3306/airlanedb
-    username: root
-    password: root
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: create-drop    
-      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
-    properties:
-      hibernate:   
-        dialect: org.hibernate.dialect.MySQL5Dialect
-
 
 eureka:
   instance:
@@ -34,18 +21,6 @@ eureka:
 ---
 spring:
   profiles: docker
-  datasource:
-    url: jdbc:mysql://192.168.99.100:3306/airlanedb
-    username: root
-    password: root
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: create-drop    
-      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
-    properties:
-      hibernate:   
-        dialect: org.hibernate.dialect.MySQL5Dialect
     
 eureka:
   instance:

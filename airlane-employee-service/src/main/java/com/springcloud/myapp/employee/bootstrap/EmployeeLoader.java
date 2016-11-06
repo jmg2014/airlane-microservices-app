@@ -1,4 +1,4 @@
-package com.springcloud.myapp.bootstrap;
+package com.springcloud.myapp.employee.bootstrap;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,20 +6,20 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import com.springcloud.myapp.domain.Employee;
-import com.springcloud.myapp.domain.Position;
-import com.springcloud.myapp.repositories.EmployeeRepository;
-import com.springcloud.myapp.repositories.PositionRepository;
+import com.springcloud.myapp.employee.domain.Employee;
+import com.springcloud.myapp.employee.domain.Position;
+import com.springcloud.myapp.employee.repositories.EmployeeRepository;
+import com.springcloud.myapp.employee.repositories.PositionRepository;
 
 @Component
-public class AirCrewLoader implements ApplicationListener<ContextRefreshedEvent> {
+public class EmployeeLoader implements ApplicationListener<ContextRefreshedEvent> {
 
 
   private PositionRepository positionRepository;
 
   private EmployeeRepository employeeRepository;
 
-  private Logger log = Logger.getLogger(AirCrewLoader.class);
+  private Logger log = Logger.getLogger(EmployeeLoader.class);
 
   @Autowired
   public void setPositionRepository(PositionRepository positionRepository) {

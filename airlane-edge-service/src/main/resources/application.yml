@@ -10,9 +10,13 @@ spring:
 zuul:
     ignoredServices: '*'
     routes:
-      meganexus-config-client:
+      airlane-web:
         path: /airlane-web/**
         serviceId: airlane-web        
+        stripPrefix: false 
+      airlane-employee-service:
+        path: /v1/employee-service/**
+        serviceId: airlane-employee-service        
         stripPrefix: false 
      
 info:
@@ -51,10 +55,14 @@ spring:
 zuul:
     ignoredServices: '*'
     routes:
-      meganexus-config-client:
+      airlane-web:
         path: /airlane-web/**
         serviceId: airlane-web        
-        stripPrefix: false 
+        stripPrefix: false
+      airlane-employee-service:
+        path: /v1/employee-service/**
+        serviceId: airlane-employee-service        
+        stripPrefix: false  
      
 info:
   component: Zuul Server

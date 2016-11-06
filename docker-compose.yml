@@ -33,8 +33,18 @@ airlane-web:
   links:
    - discovery-service
    - config-service
-   - airlane-mysql   
-   
+
+airlane-employee-service:
+  image: jflight/airlane-employee-service
+  environment:
+   - SPRING_PROFILES_ACTIVE=docker
+  ports:
+   - 7000:7000
+  links:
+   - discovery-service
+   - config-service
+   - airlane-mysql  
+      
 airlane-mysql:
   image: mysql:5.7
   ports:

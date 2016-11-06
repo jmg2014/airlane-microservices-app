@@ -1,20 +1,27 @@
-package com.springcloud.myapp.domain;
+package com.springcloud.myapp.employee.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
+@Entity
 public class Employee {
 
-  
-
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-
+  @Version
   private Integer version;
 
   private String name;
 
   private String lastName;
 
-
+  @ManyToOne
   private Position position;
 
   public Long getId() {

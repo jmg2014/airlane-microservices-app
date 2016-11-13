@@ -21,6 +21,7 @@ public class EmployeeController {
 
   private EmployeeService employeeService;
 
+
   @Autowired
   public EmployeeController(EmployeeService employeeService) {
     this.employeeService = employeeService;
@@ -31,23 +32,26 @@ public class EmployeeController {
   public ResponseEntity<Employee> getEmployee(@PathVariable Long employeeId) {
     return Optional.ofNullable(employeeService.getEmployee(employeeId))
         .map(result -> new ResponseEntity<>(result, HttpStatus.OK))
-        .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
   }
 
   @GetMapping(value = "/employees")
   public ResponseEntity<Iterable<Employee>> getEmployees() {
     return Optional.ofNullable(employeeService.getEmployees())
         .map(result -> new ResponseEntity<>(result, HttpStatus.OK))
-        .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
   }
 
 
   @PostMapping(value = "/save")
-  public ResponseEntity<Employee> createOrder(@RequestBody Employee employee) throws Exception {
+  public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) throws Exception {
     assert employee != null;
+
     return Optional.ofNullable(employeeService.save(employee))
         .map(a -> new ResponseEntity<>(a, HttpStatus.OK))
         .orElseThrow(() -> new Exception("Could not save the employee"));
   }
+
+
 
 }

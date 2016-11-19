@@ -40,10 +40,10 @@ public class EmployeeControllerTest {
   private MockMvc mockMvc;
 
   @Autowired
-  ObjectMapper objectMapper;
+  private ObjectMapper objectMapper;
 
-  Employee john;
-  Employee mary;
+  private Employee john;
+  private Employee mary;
 
   @Before
   public void setUp() {

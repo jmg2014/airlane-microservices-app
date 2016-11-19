@@ -18,7 +18,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springcloud.myapp.employee.domain.Position;
 
 @RunWith(SpringRunner.class)
@@ -31,10 +30,6 @@ public class PositionControllerTest {
 
   @Autowired
   private MockMvc mockMvc;
-
-  @Autowired
-  ObjectMapper objectMapper;
-
 
   private Position captain;
 

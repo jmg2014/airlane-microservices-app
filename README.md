@@ -1,12 +1,12 @@
 <a href="https://github.com/jmg2014/twitter-app/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
 ![alt tag](https://travis-ci.org/jmg2014/airlane-microservices-app.svg?branch=master) 
 
-#Airlane application
+# Airlane application
 
 This is an ongoing project to manage an airlane company using Spring Cloud Netflix
 
 
-##The project has the following modules:
+## The project has the following modules:
 
 ### Airlane-config-service
 

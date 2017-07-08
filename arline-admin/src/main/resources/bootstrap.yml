@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: airlane-admin
+    
+server:
+  port: 8081
+  context-path: /airlane-admin

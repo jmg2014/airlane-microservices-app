@@ -24,3 +24,6 @@ This is the API gateway using Zuul.
 ### Airlane-webapp
 
 The web application provides the main interface of the online airlane backend. Users are able to manage the aircrew and the destinations of the flights.
+
+### Airlane-admin
+Spring Boot Admin to manage and monitor all the Spring Boot Applications

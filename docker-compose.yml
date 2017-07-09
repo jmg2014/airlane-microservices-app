@@ -33,6 +33,16 @@ airlane-web:
   links:
    - discovery-service
    - config-service
+   
+airlane-admin:
+  image: jflight/airlane-admin
+  environment:
+   - SPRING_PROFILES_ACTIVE=docker
+  ports:
+   - 8081:8081
+  links:
+   - discovery-service
+  
 
 airlane-employee-service:
   image: jflight/airlane-employee-service

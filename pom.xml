@@ -53,8 +53,8 @@
 		<module>airlane-discovery-service</module>
 		<module>airlane-webapp</module>
 		<module>airlane-edge-service</module>
-
 		<module>airlane-employee-service</module>
+		<module>arline-admin</module>
 	</modules>
 	<description>Application to manage an airlaine using Spring Cloud Netflix</description>
 </project>

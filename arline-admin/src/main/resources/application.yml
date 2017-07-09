@@ -1,9 +1,6 @@
 spring:
   profiles:
     active: development
-
-info:
-  component: Configuration service 
 ---
 spring:
   profiles: development
@@ -11,10 +8,8 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-    leaseRenewalIntervalInSeconds: 10
-    statusPageUrlPath: /config-service/info
-    homePageUrlPath: /config-service/
-    healthCheckUrlPath: /config-service/health
+    statusPageUrlPath: /airlane-admin/info
+    healthCheckUrlPath: /airlane-admin/health
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -24,28 +19,25 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 management:
   security:
-    enabled: false 
+    enabled: false   
   
-          
 ---
 spring:
   profiles: docker
-
+    
 eureka:
   instance:
     prefer-ip-address: true
-    leaseRenewalIntervalInSeconds: 10
-    statusPageUrlPath: /config-service/info
-    homePageUrlPath: /config-service/
-    healthCheckUrlPath: /config-service/health
+    statusPageUrlPath: /airlane-admin/info
+    healthCheckUrlPath: /airlane-admin/health
   client:
     registerWithEureka: true
     fetchRegistry: true
     healthcheck:
       enabled:true
     serviceUrl:
-      defaultZone: http://192.168.99.100:8761/eureka/
+      defaultZone: http://192.168.99.100:8761/eureka/   
 management:
   security:
     enabled: false 
-        
+

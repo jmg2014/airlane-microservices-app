@@ -66,6 +66,10 @@
 			<artifactId>hsqldb</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -90,13 +94,13 @@
 			<plugin>
 				<!-- run the regular tests -->
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>	
+				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
 
 			<plugin>
 				<!-- run the integration tests -->
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>				
+				<artifactId>maven-failsafe-plugin</artifactId>
 				<executions>
 					<execution>
 						<goals>
@@ -109,7 +113,7 @@
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>				
+				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
 					<execution>
 						<id>add-integration-test-source-as-test-sources</id>
@@ -125,8 +129,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-				<plugin>
+
+			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>${docker.plugin.version}</version>

@@ -45,6 +45,9 @@ eureka:
       enabled:true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+management:
+  security:
+    enabled: false 
       
 ---
 spring:
@@ -89,5 +92,8 @@ eureka:
     healthcheck:
       enabled:true
     serviceUrl:
-      defaultZone: http://192.168.99.100:8761/eureka/      
+      defaultZone: http://192.168.99.100:8761/eureka/   
+management:
+  security:
+    enabled: false    
           
